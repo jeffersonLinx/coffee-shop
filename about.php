@@ -27,34 +27,10 @@
 </head>
 
 <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid p-0 nav-bar">
-        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
-            <a href="index.html" class="navbar-brand px-lg-4 m-0">
-                <h1 class="m-0 display-4 text-uppercase text-white">KOPPEE</h1>
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="navbar-nav ml-auto p-4">
-                    <a href="index.html" class="nav-item nav-link active">Inicio</a>
-                    <a href="about.html" class="nav-item nav-link">Acerca de</a>
-                    <a href="service.html" class="nav-item nav-link">Servicios</a>
-                    <a href="menu.html" class="nav-item nav-link">Menu</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Paginas</a>
-                        <div class="dropdown-menu text-capitalize">
-                            <a href="reservation.html" class="dropdown-item">Reservacion</a>
-                            <a href="testimonial.html" class="dropdown-item">Reseñas</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contactanos</a>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- Navbar End -->
+    <!-- Footer Start -->
+
+    <?php include 'body/header.php'; ?>
+    <!-- Footer End -->
 
 
     <!-- Page Header Start -->
@@ -82,7 +58,8 @@
                 <div class="col-lg-4 py-0 py-lg-5">
                     <h1 class="mb-3">Nuestra Historia</h1>
                     <h5 class="mb-3">TITULO AQUI HINSERTAR SOBRE LA HISTORIA</h5>
-                    <p>BLA ÑAÑAÑAAÑAÑAÑAAÑAÑÑAÑAÑAÑAÑAÑAÑÑAÑAÑAÑAÑAÑ AAAÑAÑAÑAÑÑAÑAÑAÑAÑAÑ AÑÑAÑAÑAAÑAÑAÑAÑAÑAÑAÑAÑA ÑAÑAÑAÑAÑAÑAÑAÑÑ AÑ AÑAÑAAÑ</p>
+                    <p> Promover el bienestar del consumidor, el respeto por el medio ambiente y el desarrollo local, mientras conectamos a las personas con los sabores naturales y auténticos de Bolivia. Nos guía la pasión por el café y el amor por la naturaleza, y nos esforzamos por ser líderes en la industria del café sostenible en la región.
+                    </p>
                     <a href="" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Leer mas</a>
                 </div>
                 <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
@@ -92,10 +69,11 @@
                 </div>
                 <div class="col-lg-4 py-0 py-lg-5">
                     <h1 class="mb-3">Nuestra Vision</h1>
-                    <p>contenido añañañañañañañ ñañañañañañañ ñañañañañañañ ñañañañaañ ñañañañaña ñañañaña</p>
-                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>VISION 1</h5>
-                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>VISION 2</h5>
-                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>VISION 3</h5>
+                    <p>Expandirnos hacia nuevos mercados de forma ética y consciente, llevando el auténtico aroma de Buena Vista a más personas, mientras mantenemos nuestra esencia natural y nuestras raíces bolivianas. Nos esforzamos por innovar y mejorar continuamente, colaborando con la comunidad local y otros actores en la industria para lograr un impacto positivo en la región
+                    </p>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>  REFERENTE EN SANTA CRUZ </h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i> SOSTENIBILIDAD </h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>EXCELETES PROPUCTOS</h5>                    
                     <a href="" class="btn btn-primary font-weight-bold py-2 px-4 mt-2">Leer mas</a>
                 </div>
             </div>

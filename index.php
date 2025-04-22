@@ -72,9 +72,10 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 py-0 py-lg-5">
-                    <h1 class="mb-3">Nuestra Historia</h1>
+                    <h1 class="mb-3">Nuestra Mision</h1>
                     <h5 class="mb-3">TITULO AQUI HINSERTAR SOBRE LA HISTORIA</h5>
-                    <p>BLA ÑAÑAÑAAÑAÑAÑAAÑAÑÑAÑAÑAÑAÑAÑAÑÑAÑAÑAÑAÑAÑ AAAÑAÑAÑAÑÑAÑAÑAÑAÑAÑ AÑÑAÑAÑAAÑAÑAÑAÑAÑAÑAÑAÑA ÑAÑAÑAÑAÑAÑAÑAÑÑ AÑ AÑAÑAAÑ</p>
+                    <p> Promover el bienestar del consumidor, el respeto por el medio ambiente y el desarrollo local, mientras conectamos a las personas con los sabores naturales y auténticos de Bolivia. Nos guía la pasión por el café y el amor por la naturaleza, y nos esforzamos por ser líderes en la industria del café sostenible en la región.
+                    </p>
                     <a href="" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Leer mas</a>
                 </div>
                 <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
@@ -84,10 +85,11 @@
                 </div>
                 <div class="col-lg-4 py-0 py-lg-5">
                     <h1 class="mb-3">Nuestra Vision</h1>
-                    <p>contenido añañañañañañañ ñañañañañañañ ñañañañañañañ ñañañañaañ ñañañañaña ñañañaña</p>
-                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>VISION 1</h5>
-                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>VISION 2</h5>
-                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>VISION 3</h5>
+                    <p>Expandirnos hacia nuevos mercados de forma ética y consciente, llevando el auténtico aroma de Buena Vista a más personas, mientras mantenemos nuestra esencia natural y nuestras raíces bolivianas. Nos esforzamos por innovar y mejorar continuamente, colaborando con la comunidad local y otros actores en la industria para lograr un impacto positivo en la región
+                    </p>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>  REFERENTE EN SANTA CRUZ </h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i> SOSTENIBILIDAD </h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>EXCELETES PROPUCTOS</h5>
                     <a href="" class="btn btn-primary font-weight-bold py-2 px-4 mt-2">Leer mas</a>
                 </div>
             </div>
