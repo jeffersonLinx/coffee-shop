@@ -112,7 +112,7 @@
                             <img class="img-fluid mb-3 mb-sm-0" src="img/service-1.jpg" alt="">
                         </div>
                         <div class="col-sm-7">
-                            <h4><i class="fa fa-truck service-icon"></i>Servicio de Entrega</h4>
+                            <h4><i class="fa fa-truck service-icon"></i>Servicio Personalizado</h4>
                             <p class="m-0">ñañaaññañañañaañ ñañañañaañ ñañaañañañ añañañaña ñañañañañ añañañaañañ añañañañañaañ ñañañaañ</p>
                         </div>
                     </div>
