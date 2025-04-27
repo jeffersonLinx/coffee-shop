@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+// session_start();
 if (empty($_SESSION['id'])) {
     header('Location: ./');
 } ?>
@@ -36,7 +37,7 @@ if (empty($_SESSION['id'])) {
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Mi portafolio<sup>web</sup></div>
+                <div class="sidebar-brand-text mx-3">Monte Aroma Coffee<sup>linea</sup></div>
             </a>
 
             <!-- Divider -->
@@ -59,19 +60,24 @@ if (empty($_SESSION['id'])) {
                     <span>Categorias</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="proyectos.php">
+                <a class="nav-link" href="productos.php">
                     <i class="fas fa-list"></i>
-                    <span>Proyectos</span></a>
+                    <span>Productos</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="registro.php">
+                <a class="nav-link" href="registra.php">
                     <i class="fas fa-user"></i>
                     <span>Registro usuario</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="usuarios.php">
+                <a class="nav-link" href="#">
                     <i class="fas fa-user"></i>
                     <span>Mis usuarios</span></a>   
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-book"></i>
+                    <span>Reportes</span></a>   
             </li>
 
             <!-- Divider -->
