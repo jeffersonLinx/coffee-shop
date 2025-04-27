@@ -14,25 +14,34 @@ if (!empty($_POST)) {
         exit;
     } else {
         $user = mysqli_real_escape_string($conn, $_POST['usuario']);
-        $clave = md5(mysqli_real_escape_string($conn, $_POST['clave'])); // Usás md5 como pediste
+        $pass_input = mysqli_real_escape_string($conn, $_POST['clave']);
 
-        $query = mysqli_query($conn, "SELECT * FROM usuarios WHERE usuario = '$user' AND clave = '$clave'");
+        // Buscamos el usuario
+        $query = mysqli_query($conn, "SELECT * FROM usuarios WHERE usuario = '$user'");
         mysqli_close($conn);
 
-        $resultado = mysqli_num_rows($query);
-        if ($resultado > 0) {
+        if ($query && mysqli_num_rows($query) > 0) {
             $dato = mysqli_fetch_array($query);
-            $_SESSION['active'] = true;
-            $_SESSION['id'] = $dato['id'];
-            $_SESSION['nombre'] = $dato['nombre'];
-            $_SESSION['user'] = $dato['usuario'];
 
-            header('Location: ../admin/productos.php');
-            exit;
+            // Ahora verificamos la contraseña encriptada
+            if (password_verify($pass_input, $dato['clave'])) {
+                $_SESSION['active'] = true;
+                $_SESSION['id'] = $dato['id'];
+                $_SESSION['nombre'] = $dato['nombre'];
+                $_SESSION['user'] = $dato['usuario'];
+
+                header('Location: ../admin/productos.php');
+                exit;
+            } else {
+                $_SESSION['error_login'] = 'Contraseña o usuario incorrecto';
+                session_destroy();
+                header('Location: index.php');
+                exit;
+            }
         } else {
             $_SESSION['error_login'] = 'Contraseña o usuario incorrecto';
             session_destroy();
-            header('Location: ../admin/index.php');
+            header('Location: index.php');
             exit;
         }
     }
@@ -41,4 +50,3 @@ if (!empty($_POST)) {
     exit;
 }
 ?>
-
