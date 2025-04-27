@@ -39,6 +39,13 @@
 <script src="../assets/js/all.min.js"></script>
 <script src="../assets/js/scripts.js"></script>
 
+<!-- Inicio para el header  -->
+<!-- Bootstrap core JavaScript-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- fin para el header -->
 </body>
 
 </html>

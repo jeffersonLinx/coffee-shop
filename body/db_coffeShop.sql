@@ -28,6 +28,9 @@ CREATE TABLE productos (
   id_categoria INT(11) NOT NULL,
   FOREIGN KEY (id_categoria) REFERENCES categorias(id) ON DELETE CASCADE
 );
+--
+ALTER TABLE productos ADD estado TINYINT(1) NOT NULL DEFAULT 1;
+--
 -- tabla clientes 
 CREATE TABLE clientes (
   id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -56,6 +59,22 @@ CREATE TABLE mensajes_contacto (
   fecha_envio DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 -- datos
+-- trigger 
+DELIMITER $$
+CREATE TRIGGER actualizar_estado_producto
+AFTER UPDATE ON categorias
+FOR EACH ROW
+BEGIN
+    IF NEW.estado = 0 THEN
+        UPDATE productos 
+        SET estado = 0 
+        WHERE id_categoria = NEW.id;
+    END IF;
+END $$
+DELIMITER ;
+
+
+--
 -- clave P
 INSERT INTO usuarios (`usuario`, `nombre`, `clave`) VALUES
 ('admin123', 'Admin Principal', '21232f297a57a5a743894a0e4a801fc3');

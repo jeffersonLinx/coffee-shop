@@ -1,3 +1,6 @@
+<!-- Alertas  -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <?php
 session_start();
 require_once "../config/conn.php";
@@ -26,11 +29,36 @@ include("includes/header.php");
 </div>
 
 <?php if (!empty($alert)) : ?>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <?php echo $alert; ?>
+<script>
+    <?php if (strpos($alert, 'Error') !== false) : ?>
+        // Si el mensaje contiene "Error", se muestra la alerta de error
+        Swal.fire({
+            icon: 'error', // X roja para error
+            title: '¡Error!',
+            text: '<?php echo $alert; ?>', // Mensaje de error
+            showConfirmButton: true,
+            confirmButtonText: 'Ok'
+        });
+    <?php else : ?>
+        // Si no es un error, se muestra la alerta de éxito
+        Swal.fire({
+            icon: 'success', // Check verde para éxito
+            title: '¡Éxito!',
+            text: '<?php echo $alert; ?>', // Mensaje de éxito
+            showConfirmButton: true,
+            confirmButtonText: 'Ok'
+        });
+    <?php endif; ?>
+</script>
+<?php endif; ?>
+<!-- INICIO Validacion de estado producto -->
+<?php if (!empty($_SESSION['alert_producto'])) : ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <?php echo $_SESSION['alert_producto']; ?>
         <button type="button" class="close" data-dismiss="alert">&times;</button>
     </div>
 <?php endif; ?>
+<!-- FIN Validacion de estado producto -->
 
 <div class="row">
     <div class="col-md-12">
@@ -50,8 +78,12 @@ include("includes/header.php");
                 </thead>
                 <tbody>
                     <?php
-                    $query = mysqli_query($conn, "SELECT p.*, c.categorias FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria ORDER BY p.id DESC");
-                    while ($data = mysqli_fetch_assoc($query)) { ?>
+                    $query = mysqli_query($conn, "SELECT p.*, c.nombre_categoria FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria ORDER BY p.id DESC");
+                    while ($data = mysqli_fetch_assoc($query)) {
+                        // Determinar el estado del producto
+                        $estado = $data['estado'] == 1 ? 'Activo' : 'Inactivo';
+                        $estado_clase = $data['estado'] == 1 ? 'btn-success' : 'btn-danger';
+                        ?>
                         <tr>
                             <td><img src="../assets/img/<?php echo $data['imagen']; ?>" class="img-thumbnail" width="50"></td>
                             <td><?php echo $data['nombre']; ?></td>
@@ -59,8 +91,11 @@ include("includes/header.php");
                             <td><?php echo $data['precio_normal']; ?></td>
                             <td><?php echo $data['precio_rebajado']; ?></td>
                             <td><?php echo $data['cantidad']; ?></td>
-                            <td><?php echo $data['categoria']; ?></td>
+                            <td><?php echo $data['nombre_categoria']; ?></td>
                             <td>
+                                <!-- Estado Producto -->
+                                <span class="btn <?php echo $estado_clase; ?> btn-sm"><?php echo $estado; ?></span>
+
                                 <!-- Botón Editar -->
                                 <button class="btn btn-warning btn-sm editarProducto"
                                     data-id="<?php echo $data['id']; ?>"
@@ -74,6 +109,12 @@ include("includes/header.php");
                                     Editar
                                 </button>
 
+                                <!-- Botón Cambiar Estado -->
+                                <form method="post" action="../controllers/producto_estado.php" class="d-inline">
+                                    <input type="hidden" name="id_producto" value="<?php echo $data['id']; ?>">
+                                    <button class="btn btn-info btn-sm" type="submit">Cambiar Estado</button>
+                                </form>
+
                                 <!-- Botón Eliminar -->
                                 <form method="post" action="eliminar.php?accion=pro&id=<?php echo $data['id']; ?>" class="d-inline eliminar">
                                     <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
@@ -82,6 +123,7 @@ include("includes/header.php");
                         </tr>
                     <?php } ?>
                 </tbody>
+
             </table>
         </div>
     </div>
@@ -121,14 +163,16 @@ include("includes/header.php");
                         </div>
                         <div class="col-md-6">
                             <label>Categoría</label>
-                            <select class="form-control" name="categoria" required>
-                                <?php
-                                $categorias = mysqli_query($conn, "SELECT * FROM categorias");
-                                foreach ($categorias as $cat) {
-                                    echo "<option value='{$cat['id']}'>{$cat['categoria']}</option>";
-                                }
-                                ?>
-                            </select>
+                        <select class="form-control" name="categoria" required>
+                            <?php
+                            // Seleccionar solo las categorías activas
+                            $categorias = mysqli_query($conn, "SELECT * FROM categorias WHERE estado = 1");
+                            foreach ($categorias as $cat) {
+                                echo "<option value='{$cat['id']}'>{$cat['nombre_categoria']}</option>";
+                            }
+                            ?>
+                        </select>
+
                         </div>
                         <div class="col-md-6">
                             <label>Foto</label>
@@ -182,7 +226,7 @@ include("includes/header.php");
                                 <?php
                                 $categorias = mysqli_query($conn, "SELECT * FROM categorias");
                                 foreach ($categorias as $cat) {
-                                    echo "<option value='{$cat['id']}'>{$cat['categoria']}</option>";
+                                    echo "<option value='{$cat['id']}'>{$cat['nombre_categoria']}</option>";
                                 }
                                 ?>
                             </select>
