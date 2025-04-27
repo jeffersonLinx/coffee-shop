@@ -54,20 +54,20 @@
                     <div class="col-lg-6 my-5 my-lg-0">
                         <div class="p-5">
                             <div class="mb-4">
-                                <h1 class="display-3 text-primary">30% De Descuento</h1>
+                                <h1 class="display-3 text-primary">30% De menos en la primera compra</h1>
                                 <h1 class="text-white">Para Reservas en Linea</h1>
                             </div>
-                            <p class="text-white"> Para reservas en lina aaaaaaaaaaaa ajaajseopfjofijfoijfrfgorihroihiho    </p>
+                            <p class="text-white"> Reserva con un mes de adelanto tendra un descuento personalizado </p>
                             <ul class="list-inline text-white m-0">
-                                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Reserva de mesa</li>
-                                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Pedidos personalizados</li>
-                                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Notificacion de ofertas especiales</li>
+                                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Reserva antipadas</li>
+                                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>1 mes de adelanto + descuento</li>
+                                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i> fechas especiales</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="text-center p-5" style="background: rgba(51, 33, 29, .8);">
-                            <h1 class="text-white mb-4 mt-5">Rerserva tu mesa</h1>
+                            <h1 class="text-white mb-4 mt-5">Reservas anticipadas</h1>
                             <form class="mb-5">
                                 <div class="form-group">
                                     <input type="text" class="form-control bg-transparent border-primary p-4" placeholder="Nombre"
@@ -89,11 +89,11 @@
                                 </div>
                                 <div class="form-group">
                                     <select class="custom-select bg-transparent border-primary px-4" style="height: 49px;">
-                                        <option selected>Tabla persona</option>
-                                        <option value="1">DB person 1</option>
-                                        <option value="2">DB Person 2</option>
-                                        <option value="3">DB Person 3</option>
-                                        <option value="3">DB Person 4</option>
+                                        <option selected> Café frío con Pachit + taza  </option>
+                                        <option value="1">Pack para dos + tarjeta</option>
+                                        <option value="2">  Café + marcapáginas literario </option>
+                                        <option value="3"> Combo invernal + Playlist + receta </option>
+                                        <option value="3"> Pack regalo edición limitada </option>
                                     </select>
                                 </div>
                                 

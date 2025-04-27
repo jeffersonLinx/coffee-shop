@@ -27,10 +27,10 @@
 </head>
 
 <body>
-    <!-- Footer Start -->
+    <!-- Header Start -->
 
     <?php include 'body/header.php'; ?>
-    <!-- Footer End -->
+    <!-- Header End -->
 
 
     <!-- Page Header Start -->
@@ -56,7 +56,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 py-0 py-lg-5">
-                    <h1 class="mb-3">Nuestra Historia</h1>
+                    <h1 class="mb-3">Nuestra Mision</h1>
                     <h5 class="mb-3">TITULO AQUI HINSERTAR SOBRE LA HISTORIA</h5>
                     <p> Promover el bienestar del consumidor, el respeto por el medio ambiente y el desarrollo local, mientras conectamos a las personas con los sabores naturales y auténticos de Bolivia. Nos guía la pasión por el café y el amor por la naturaleza, y nos esforzamos por ser líderes en la industria del café sostenible en la región.
                     </p>
@@ -73,7 +73,7 @@
                     </p>
                     <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>  REFERENTE EN SANTA CRUZ </h5>
                     <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i> SOSTENIBILIDAD </h5>
-                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>EXCELETES PROPUCTOS</h5>                    
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>EXCELETES PRODUCTOS</h5>
                     <a href="" class="btn btn-primary font-weight-bold py-2 px-4 mt-2">Leer mas</a>
                 </div>
             </div>

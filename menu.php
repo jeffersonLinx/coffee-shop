@@ -55,68 +55,68 @@
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <h1 class="mb-5">Cafe Caliente</h1>
+                    <h1 class="mb-5">Productos de Inicio de temporada</h1>
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
                             <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="">
-                            <h5 class="menu-price"  style="font-size: 16px;">Bs.15</h5>
+                            <h5 class="menu-price"  style="font-size: 16px;">Bs.XX</h5>
                         </div>
                         <div class="col-8 col-sm-9">
-                            <h4>Cafe Negro</h4>
-                            <p class="m-0">El cafe es marron oscuro y caliente</p>
+                            <h4>Café frío con Pachit + taza</h4>
+                            <p class="m-0">Producto especial de temporada de verano</p>
                         </div>
                     </div>
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
                             <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="">
-                            <h5 class="menu-price" style="font-size: 16px;">Bs.20</h5>
+                            <h5 class="menu-price" style="font-size: 16px;">Bs.XX</h5>
                         </div>
                         <div class="col-8 col-sm-9">
-                            <h4>Cafe Chocolate</h4>
-                            <p class="m-0">Cafe mesclado con chocolate ricura</p>
+                            <h4>Café + marcapáginas literario</h4>
+                            <p class="m-0">Producto sugerido para el Dia del Libro</p>
                         </div>
                     </div>
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
                             <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="">
-                            <h5 class="menu-price" style="font-size: 16px;">Bs.25</h5>
+                            <h5 class="menu-price" style="font-size: 16px;">Bs.XX</h5>
                         </div>
                         <div class="col-8 col-sm-9">
-                            <h4>Cafe con Leche</h4>
-                            <p class="m-0">Cafe mesclado con chocolae exquisito bien hot</p>
+                            <h4>Combo invernal + Playlist + receta</h4>
+                            <p class="m-0">El mejor producto para el inviero de San Juan</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <h1 class="mb-5">Cafe Frio</h1>
+                    <h1 class="mb-5">Productos de media temporada y mas ...</h1>
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
                             <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="">
-                            <h5 class="menu-price" style="font-size: 16px;">Bs.15</h5>
+                            <h5 class="menu-price" style="font-size: 16px;">Bs.XX</h5>
                         </div>
                         <div class="col-8 col-sm-9">
-                            <h4>Cafe Negro</h4>
-                            <p class="m-0">Cafe negro pero frio con hielo</p>
+                            <h4>Pack para dos + tarjeta</h4>
+                            <p class="m-0">Producto especial para temporada de San Valentin</p>
                         </div>
                     </div>
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
                             <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="">
-                            <h5 class="menu-price"style="font-size: 16px;" >Bs.20</h5>
+                            <h5 class="menu-price"style="font-size: 16px;" >Bs.XX</h5>
                         </div>
                         <div class="col-8 col-sm-9">
-                            <h4>Cafe Chocolate</h4>
-                            <p class="m-0">Cafe de chocolate frio</p>
+                            <h4>Pack regalo edición limitada</h4>
+                            <p class="m-0"> Producto Especial para las fechas navideñas</p>
                         </div>
                     </div>
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
                             <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="">
-                            <h5 class="menu-price" style="font-size: 16px;">Bs.25</h5>
+                            <h5 class="menu-price" style="font-size: 16px;">Bs.XX</h5>
                         </div>
                         <div class="col-8 col-sm-9">
-                            <h4>Cafe con Leche</h4>
-                            <p class="m-0">Cafe con leche pero frio</p>
+                            <h4>Cafe tostado </h4>
+                            <p class="m-0">Cafe un producto sensillo pero util </p>
                         </div>
                     </div>
                 </div>

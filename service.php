@@ -60,8 +60,8 @@
                             <img class="img-fluid mb-3 mb-sm-0" src="img/service-1.jpg" alt="">
                         </div>
                         <div class="col-sm-7">
-                            <h4><i class="fa fa-truck service-icon"></i>Servicio de Entrega</h4>
-                            <p class="m-0">ñañaaññañañañaañ ñañañañaañ ñañaañañañ añañañaña ñañañañañ añañañaañañ añañañañañaañ ñañañaañ</p>
+                            <h4><i class="fa fa-truck service-icon"></i>Servicio Personalizado</h4>
+                            <p class="m-0">Nuestro equipo está capacitado para guiar en la elección del café ideal, recomendando métodos de preparación y brindando una experiencia única que conecta con los sentidos.</p>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="col-sm-7">
                             <h4><i class="fa fa-coffee service-icon"></i>Granos Frescos</h4>
-                            <p class="m-0">aááá aáañaññañaña ñañañañañ añaññaañañ ñañañañañ ñañañañañ añañañañañ ñañañañaña ñañañañaña ñañañañña</p>
+                            <p class="m-0">Seleccionamos granos de café directamente de Buena Vista, una región reconocida por su riqueza natural. Cada lote se tuesta en pequeñas cantidades para garantizar frescura, aroma intenso y un sabor que resalta las notas auténticas del grano boliviano.</p>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                         </div>
                         <div class="col-sm-7">
                             <h4><i class="fa fa-award service-icon"></i>Cafe de Calidad</h4>
-                            <p class="m-0">ñañañaañañañ ñañ añañañañañañaañañaaaañañañaña ñaañañañañañaañañ ñañaañañaña</p>
+                            <p class="m-0">Nuestro café es 100% orgánico, libre de pesticidas y cultivado bajo prácticas sostenibles. Nos enfocamos en ofrecer un producto premium, con un perfil de sabor cuidadosamente trabajado, que satisface tanto al consumidor conocedor como al amante casual del café.</p>
                         </div>
                     </div>
                 </div>
@@ -93,8 +93,8 @@
                             <img class="img-fluid mb-3 mb-sm-0" src="img/service-4.jpg" alt="">
                         </div>
                         <div class="col-sm-7">
-                            <h4><i class="fa fa-table service-icon"></i>Rerserva de Mesa</h4>
-                            <p class="m-0">añañañañañaña ñañañañaññañ ñañaañaññ añañañañ ñañañañaañ ñañañaña ñañañañañ ñañaañaña</p>
+                            <h4><i class="fa fa-table service-icon"></i>Rerserva Anticipadas</h4>
+                            <p class="m-0"> Pensando en la comodidad de nuestros clientes, ofrecemos un sistema de reserva anticipada para pedidos personalizados, talleres de cata y experiencias de café. Esta opción permite asegurar disponibilidad y atención exclusiva en fechas programadas. </p>
                         </div>
                     </div>
                 </div>
