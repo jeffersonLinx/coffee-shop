@@ -69,9 +69,10 @@ CREATE TABLE mensajes_contacto (
   fecha_envio DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 -- datos
-
+select * from mensajes_contacto;
 select * from categorias;
 select * from productos;
+select * from clientes;
 DROP TRIGGER IF EXISTS actualizar_estado_producto;
 --
 -- clave P

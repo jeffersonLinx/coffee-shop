@@ -57,23 +57,23 @@
                 <div class="col-sm-4 text-center mb-3">
                     <i class="fa fa-2x fa-map-marker-alt mb-3 text-primary"></i>
                     <h4 class="font-weight-bold">Direccion</h4>
-                    <p>Av Beni, Santa Cruz , Bolivia</p>
+                    <p>Calle 4°N 316, Zona Eqipetrol , Santan Cruz, Bolivia </p>
                 </div>
                 <div class="col-sm-4 text-center mb-3">
                     <i class="fa fa-2x fa-phone-alt mb-3 text-primary"></i>
                     <h4 class="font-weight-bold">Nuestro Telf.</h4>
-                    <p>+012 345 6789</p>
+                    <p>+591 77654321</p>
                 </div>
                 <div class="col-sm-4 text-center mb-3">
                     <i class="far fa-2x fa-envelope mb-3 text-primary"></i>
                     <h4 class="font-weight-bold">Email</h4>
-                    <p>info@cafeAroma.com</p>
+                    <p>contacto@montearomacoffee.bo</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 pb-5">
-                    <iframe style="width: 100%; height: 443px;" 
-                    src="https://www.google.com/maps?q=-17.759877340484092,-63.17543251895815&z=15&output=embed" 
+                    <iframe style="width: 100%; height: 443px;"  
+                    src="https://www.google.com/maps?q=-17.76015055334364,-63.19982116105084&z=15&output=embed" 
                     width="600" 
                     height="450" 
                     style="border:0;" 
@@ -86,33 +86,40 @@
                 <div class="col-md-6 pb-5">
                     <div class="contact-form">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                            <div class="control-group">
-                                <input type="text" class="form-control bg-transparent p-4" id="name" placeholder="Your Name"
-                                    required="required" data-validation-required-message="Please enter your name" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <input type="email" class="form-control bg-transparent p-4" id="email" placeholder="Your Email"
-                                    required="required" data-validation-required-message="Please enter your email" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control bg-transparent p-4" id="subject" placeholder="Subject"
-                                    required="required" data-validation-required-message="Please enter a subject" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control bg-transparent py-3 px-4" rows="5" id="message" placeholder="Message"
-                                    required="required"
-                                    data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div>
-                                <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit" id="sendMessageButton">Send
-                                    Message</button>
-                            </div>
+                        <form name="sentMessage" id="contactForm" method="POST" action="#" novalidate="novalidate">
+
+                        <div class="control-group">
+                            <input type="text" name="name" class="form-control bg-transparent p-4" id="name" placeholder="Tu nombre"
+                                required="required" data-validation-required-message="Por favor ingresa tu nombre" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="email" name="email" class="form-control bg-transparent p-4" id="email" placeholder="Tu correo"
+                                required="required" data-validation-required-message="Por favor ingresa tu correo" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="text" name="subject" class="form-control bg-transparent p-4" id="subject" placeholder="Asunto"
+                                required="required" data-validation-required-message="Por favor ingresa un asunto" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <textarea name="message" class="form-control bg-transparent py-3 px-4" rows="5" id="message" placeholder="Mensaje"
+                                required="required" data-validation-required-message="Por favor ingresa tu mensaje"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div>
+                            <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit" id="sendMessageButton">
+                                Enviar Mensaje
+                            </button>
+                        </div>
+
                         </form>
+
                     </div>
                 </div>
             </div>
