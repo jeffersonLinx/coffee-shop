@@ -29,36 +29,17 @@ include("includes/header.php");
 </div>
 
 <?php if (!empty($alert)) : ?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    <?php if (strpos($alert, 'Error') !== false) : ?>
-        // Si el mensaje contiene "Error", se muestra la alerta de error
-        Swal.fire({
-            icon: 'error', // X roja para error
-            title: '¡Error!',
-            text: '<?php echo $alert; ?>', // Mensaje de error
-            showConfirmButton: true,
-            confirmButtonText: 'Ok'
-        });
-    <?php else : ?>
-        // Si no es un error, se muestra la alerta de éxito
-        Swal.fire({
-            icon: 'success', // Check verde para éxito
-            title: '¡Éxito!',
-            text: '<?php echo $alert; ?>', // Mensaje de éxito
-            showConfirmButton: true,
-            confirmButtonText: 'Ok'
-        });
-    <?php endif; ?>
+    Swal.fire({
+        icon: '<?php echo strpos($alert, 'Error') !== false ? 'error' : 'success'; ?>',
+        title: '<?php echo strpos($alert, 'Error') !== false ? '¡Error!' : '¡Éxito!'; ?>',
+        text: '<?php echo $alert; ?>',
+        showConfirmButton: true,
+        confirmButtonText: 'Ok'
+    });
 </script>
 <?php endif; ?>
-<!-- INICIO Validacion de estado producto -->
-<?php if (!empty($_SESSION['alert_producto'])) : ?>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <?php echo $_SESSION['alert_producto']; ?>
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-    </div>
-<?php endif; ?>
-<!-- FIN Validacion de estado producto -->
 
 <div class="row">
     <div class="col-md-12">
@@ -73,57 +54,61 @@ include("includes/header.php");
                         <th>Precio Rebajado</th>
                         <th>Cantidad</th>
                         <th>Categoría</th>
+                        <th>Estado</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $query = mysqli_query($conn, "SELECT p.*, c.nombre_categoria FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria ORDER BY p.id DESC");
+                    $query = mysqli_query($conn, "SELECT p.*, c.nombre_categoria, c.estado AS estado_categoria FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria ORDER BY p.id DESC");
                     while ($data = mysqli_fetch_assoc($query)) {
                         // Determinar el estado del producto
                         $estado = $data['estado'] == 1 ? 'Activo' : 'Inactivo';
                         $estado_clase = $data['estado'] == 1 ? 'btn-success' : 'btn-danger';
-                        ?>
-                        <tr>
-                            <td><img src="../assets/img/<?php echo $data['imagen']; ?>" class="img-thumbnail" width="50"></td>
-                            <td><?php echo $data['nombre']; ?></td>
-                            <td><?php echo $data['descripcion']; ?></td>
-                            <td><?php echo $data['precio_normal']; ?></td>
-                            <td><?php echo $data['precio_rebajado']; ?></td>
-                            <td><?php echo $data['cantidad']; ?></td>
-                            <td><?php echo $data['nombre_categoria']; ?></td>
-                            <td>
-                                <!-- Estado Producto -->
-                                <span class="btn <?php echo $estado_clase; ?> btn-sm"><?php echo $estado; ?></span>
 
-                                <!-- Botón Editar -->
-                                <button class="btn btn-warning btn-sm editarProducto"
-                                    data-id="<?php echo $data['id']; ?>"
-                                    data-nombre="<?php echo $data['nombre']; ?>"
-                                    data-descripcion="<?php echo $data['descripcion']; ?>"
-                                    data-precionormal="<?php echo $data['precio_normal']; ?>"
-                                    data-preciorebajado="<?php echo $data['precio_rebajado']; ?>"
-                                    data-cantidad="<?php echo $data['cantidad']; ?>"
-                                    data-categoria="<?php echo $data['id_categoria']; ?>"
-                                    data-toggle="modal" data-target="#modalEditar">
-                                    Editar
-                                </button>
-
-                                <!-- Botón Cambiar Estado -->
-                                <form method="post" action="../controllers/producto_estado.php" class="d-inline">
-                                    <input type="hidden" name="id_producto" value="<?php echo $data['id']; ?>">
-                                    <button class="btn btn-info btn-sm" type="submit">Cambiar Estado</button>
-                                </form>
-
-                                <!-- Botón Eliminar -->
-                                <form method="post" action="eliminar.php?accion=pro&id=<?php echo $data['id']; ?>" class="d-inline eliminar">
-                                    <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
-                                </form>
-                            </td>
-                        </tr>
+                        // Verificar si la categoría está activa
+                        $categoria_activa = $data['estado_categoria'] == 1;
+                        $disabled = !$categoria_activa ? 'disabled' : '';
+                    ?>
+                    <tr>
+                        <td><img src="../assets/img/<?php echo $data['imagen']; ?>" class="img-thumbnail" width="50"></td>
+                        <td><?php echo $data['nombre']; ?></td>
+                        <td><?php echo $data['descripcion']; ?></td>
+                        <td><?php echo $data['precio_normal']; ?></td>
+                        <td><?php echo $data['precio_rebajado']; ?></td>
+                        <td><?php echo $data['cantidad']; ?></td>
+                        <td><?php echo $data['nombre_categoria']; ?></td>
+                        <td>
+                            <?php if ($data['estado'] == 1) { ?>
+                                <span class="badge badge-success">Activo</span>
+                            <?php } else { ?>
+                                <span class="badge badge-danger">Inactivo</span>
+                            <?php } ?>
+                        </td>
+                        <td>
+                            <!-- <span class="btn <php echo $estado_clase; ?> btn-sm"><php echo $estado; ?></span> -->
+                            <button class="btn btn-warning btn-sm editarProducto"
+                                data-id="<?php echo $data['id']; ?>"
+                                data-nombre="<?php echo $data['nombre']; ?>"
+                                data-descripcion="<?php echo $data['descripcion']; ?>"
+                                data-precionormal="<?php echo $data['precio_normal']; ?>"
+                                data-preciorebajado="<?php echo $data['precio_rebajado']; ?>"
+                                data-cantidad="<?php echo $data['cantidad']; ?>"
+                                data-categoria="<?php echo $data['id_categoria']; ?>"
+                                data-toggle="modal" data-target="#modalEditar">
+                                Editar
+                            </button>
+                            <form method="post" action="../controllers/producto_estado.php" class="d-inline">
+                                <input type="hidden" name="id_producto" value="<?php echo $data['id']; ?>">
+                                <button class="btn btn-info btn-sm" type="submit" <?php echo $disabled; ?>>Cambiar Estado</button>
+                            </form>
+                            <form method="post" action="eliminar.php?accion=pro&id=<?php echo $data['id']; ?>" class="d-inline eliminar">
+                                <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
                     <?php } ?>
                 </tbody>
-
             </table>
         </div>
     </div>
@@ -139,7 +124,6 @@ include("includes/header.php");
                     <button class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
                 </div>
                 <div class="modal-body">
-                    <!-- Formulario -->
                     <div class="row">
                         <div class="col-md-6">
                             <label>Nombre</label>
@@ -163,16 +147,15 @@ include("includes/header.php");
                         </div>
                         <div class="col-md-6">
                             <label>Categoría</label>
-                        <select class="form-control" name="categoria" required>
-                            <?php
-                            // Seleccionar solo las categorías activas
-                            $categorias = mysqli_query($conn, "SELECT * FROM categorias WHERE estado = 1");
-                            foreach ($categorias as $cat) {
-                                echo "<option value='{$cat['id']}'>{$cat['nombre_categoria']}</option>";
-                            }
-                            ?>
-                        </select>
-
+                            <select class="form-control" name="categoria" required>
+                                <?php
+                                // Seleccionar solo las categorías activas
+                                $categorias = mysqli_query($conn, "SELECT * FROM categorias WHERE estado = 1");
+                                foreach ($categorias as $cat) {
+                                    echo "<option value='{$cat['id']}'>{$cat['nombre_categoria']}</option>";
+                                }
+                                ?>
+                            </select>
                         </div>
                         <div class="col-md-6">
                             <label>Foto</label>
@@ -222,9 +205,10 @@ include("includes/header.php");
                         </div>
                         <div class="col-md-6">
                             <label>Categoría</label>
-                            <select class="form-control" name="categoria" id="edit_categoria" required>
+                            <select class="form-control" name="categoria" required>
                                 <?php
-                                $categorias = mysqli_query($conn, "SELECT * FROM categorias");
+                                // Seleccionar solo las categorías activas
+                                $categorias = mysqli_query($conn, "SELECT * FROM categorias WHERE estado = 1");
                                 foreach ($categorias as $cat) {
                                     echo "<option value='{$cat['id']}'>{$cat['nombre_categoria']}</option>";
                                 }
@@ -240,6 +224,7 @@ include("includes/header.php");
         </div>
     </div>
 </div>
+<?php include("includes/footer.php"); ?>
 
 <!-- Scripts para editar -->
 <script>
@@ -264,4 +249,3 @@ $(document).ready(function() {
 });
 </script>
 
-<?php include("includes/footer.php"); ?>

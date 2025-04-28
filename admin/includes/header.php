@@ -14,7 +14,7 @@ if (empty($_SESSION['id'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Mi portafolio</title>
+    <title>MonteAromaCoffee</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -65,7 +65,7 @@ if (empty($_SESSION['id'])) {
                     <span>Productos</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="registra.php">
+                <a class="nav-link" href="registraUsuario.php">
                     <i class="fas fa-user"></i>
                     <span>Registro usuario</span></a>
             </li>

@@ -3,24 +3,27 @@ require_once "../config/conn.php"; // Asegúrate de que esta conexión esté con
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recibe los datos del formulario
-    $usuario = $_POST['usuario'];  // Cambié 'nombre' por 'usuario'
-    $correo = $_POST['correo'];    // Cambié 'Correo' por 'correo' para mantener la consistencia en la nomenclatura
-    $clave = $_POST['clave'];      // Cambié 'Clave' por 'clave' para la consistencia
+    $usuario = $_POST['usuario'];  
+    $correo = $_POST['correo'];    
+    $clave = $_POST['clave'];      
+    $rol = $_POST['rol'];  
 
     // Hashea la contraseña
-    $clave_hash = password_hash($clave, PASSWORD_DEFAULT);  // 'Clave_hash' ya está definida en la tabla
+    $clave_hash = password_hash($clave, PASSWORD_DEFAULT);  
 
     // Prepara la consulta SQL con sentencias preparadas
-    $sql = "INSERT INTO usuarios (usuario, Correo, Clave) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO usuarios (usuario, Correo, Clave, rol) VALUES (?, ?, ?, ?)";
 
     // Prepara la declaración
     if ($stmt = $conn->prepare($sql)) {
         // Vincula los parámetros
-        $stmt->bind_param("sss", $usuario, $correo, $clave_hash);
+        $stmt->bind_param("ssss", $usuario, $correo, $clave_hash, $rol);
 
         // Ejecuta la declaración
         if ($stmt->execute()) {
-            echo "Nuevo registro creado exitosamente";
+            // Registro exitoso
+            header("Location: ../admin/productos.php"); // Aquí te faltaba ".php"
+            exit; 
         } else {
             echo "Error: " . $stmt->error;
         }

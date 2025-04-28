@@ -34,6 +34,8 @@ if (!empty($_POST)) {
             $_SESSION['id'] = $dato['id'];
             $_SESSION['nombre'] = $dato['nombre'];
             $_SESSION['user'] = $dato['usuario'];
+            $_SESSION['rol'] = $dato['rol'];
+
 
             // Redirige al área de productos
             header('Location: ../admin/productos.php');
