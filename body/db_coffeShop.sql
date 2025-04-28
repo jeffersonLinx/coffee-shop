@@ -8,6 +8,16 @@ CREATE TABLE usuarios (
     Clave VARCHAR(255) NOT NULL
     -- encriptar clave password_hash php
 );
+ALTER TABLE usuarios
+ADD COLUMN rol ENUM('admin', 'usuario', 'trabajador') NOT NULL DEFAULT 'usuario';
+-- insertar el usuario admin por db
+ -- clave $2y$10$Rx55bVpXJf9Dz0BetNS2UumodNOIL3zQzcf/oTqvsSlc1tuTws5DS 
+ -- el admin con este uestado admin
+select * from usuarios;
+UPDATE usuarios
+SET rol = 'admin'
+WHERE id = 1;
+
 -- Categoria
 CREATE TABLE categorias (
     id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -59,21 +69,10 @@ CREATE TABLE mensajes_contacto (
   fecha_envio DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 -- datos
--- trigger 
-DELIMITER $$
-CREATE TRIGGER actualizar_estado_producto
-AFTER UPDATE ON categorias
-FOR EACH ROW
-BEGIN
-    IF NEW.estado = 0 THEN
-        UPDATE productos 
-        SET estado = 0 
-        WHERE id_categoria = NEW.id;
-    END IF;
-END $$
-DELIMITER ;
 
-
+select * from categorias;
+select * from productos;
+DROP TRIGGER IF EXISTS actualizar_estado_producto;
 --
 -- clave P
 INSERT INTO usuarios (`usuario`, `nombre`, `clave`) VALUES

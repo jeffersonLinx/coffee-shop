@@ -18,6 +18,7 @@
                         <div class="dropdown-menu text-capitalize">
                             <a href="reservation.php" class="dropdown-item">Reservacion</a>
                             <a href="testimonial.php" class="dropdown-item">Reseñas</a>
+                            <a href="StorePilot.php" class="dropdown-item">tienda piloto</a>                           
                         </div>
                     </div>
                     <a href="contact.php" class="nav-item nav-link">Contactanos</a>
