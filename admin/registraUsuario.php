@@ -2,14 +2,14 @@
 session_start();
 
 // Verificar si hay sesión iniciada
-if (!isset($_SESSION['id_usuario'])) {
+if (!isset($_SESSION['id'])) {
     header('Location: ../index.php'); // Redirecciona al login si no hay sesión
     exit();
 }
 
-// Verificar si el usuario es admin
+// // Verificar si el usuario es admin
 if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin') {
-    echo "<script>alert('Acceso denegado: No tienes permisos para entrar aquí.'); window.location.href = '../index.php';</script>";
+    echo "<script>alert('Acceso denegado: No tienes permisos para entrar aquí.'); window.location.href = 'productos.php';</script>";
     exit();
 }
 
@@ -70,17 +70,17 @@ if (!empty($_SESSION['error_registro'])) {
                                             <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Nombre de usuario" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="correo" name="correo" placeholder="Correo electrónico" required>
+                                            <input type="email" class="form-control form-control-user" id="Correo" name="correo" placeholder="Correo electrónico" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="clave" name="clave" placeholder="Contraseña" required>
+                                            <input type="password" class="form-control form-control-user" id="Clave" name="clave" placeholder="Contraseña" required>
                                         </div>
                                         <select name="rol" required class="form-control">
                                         <option value="admin">Administrador</option>
                                         <option value="usuario">Usuario</option>
                                         <option value="trabajador">Trabajador</option>
                                         </select>
-
+<br>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Registrar
                                         </button>

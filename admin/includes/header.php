@@ -70,14 +70,24 @@ if (empty($_SESSION['id'])) {
                     <span>Registro usuario</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-user"></i>
+                <a class="nav-link" href="listaUsuario.php">
+                    <i class="fas fa-file-alt"></i>
                     <span>Mis usuarios</span></a>   
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="fas fa-book"></i>
+                    <i class="fas fa-chart-line"></i>
                     <span>Reportes</span></a>   
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-address-book"></i>
+                    <span> Contactos</span></a>   
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-bookmark"></i>
+                    <span>Reservas</span></a>   
             </li>
 
             <!-- Divider -->

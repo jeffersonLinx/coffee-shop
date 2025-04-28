@@ -36,6 +36,11 @@ if (!empty($_POST)) {
             $_SESSION['user'] = $dato['usuario'];
             $_SESSION['rol'] = $dato['rol'];
 
+            // $_SESSION['active'] = true;
+            // $_SESSION['id'] = $dato['id'];
+            // $_SESSION['nombre'] = $dato['nombre'];
+            // $_SESSION['user'] = $dato['usuario'];
+            // $_SESSION['rol'] = $dato['rol'];
 
             // Redirige al área de productos
             header('Location: ../admin/productos.php');
@@ -59,3 +64,7 @@ if (!empty($_POST)) {
     header('Location: ../admin/index.php');
     exit;
 }
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+var_dump($_SESSION); // Esto te mostrará todo lo que hay en $_SESSION
+
