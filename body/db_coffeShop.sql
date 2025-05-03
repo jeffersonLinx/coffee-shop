@@ -11,8 +11,8 @@ CREATE TABLE usuarios (
 ALTER TABLE usuarios
 ADD COLUMN rol ENUM('admin', 'usuario', 'trabajador') NOT NULL DEFAULT 'usuario';
 -- insertar el usuario admin por db
- -- clave $2y$10$Rx55bVpXJf9Dz0BetNS2UumodNOIL3zQzcf/oTqvsSlc1tuTws5DS 
- -- el admin con este uestado admin
+-- clave $2y$10$Rx55bVpXJf9Dz0BetNS2UumodNOIL3zQzcf/oTqvsSlc1tuTws5DS 
+-- el admin con este uestado admin
 select * from usuarios;
 UPDATE usuarios
 SET rol = 'admin'
@@ -76,7 +76,5 @@ select * from clientes;
 DROP TRIGGER IF EXISTS actualizar_estado_producto;
 --
 -- clave P
-INSERT INTO usuarios (`usuario`, `nombre`, `clave`) VALUES
-('admin123', 'Admin Principal', '21232f297a57a5a743894a0e4a801fc3');
 
 

@@ -1,3 +1,10 @@
+<?php
+// include 'config/conn.php';
+include 'controllers/reservaController.php';
+include 'body/header.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,9 +34,6 @@
 </head>
 
 <body>
-    <!-- Navbar Start -->
-        <?php include 'body/header.php'; ?>
-    <!-- Navbar End -->
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
@@ -277,35 +281,36 @@
                     <div class="col-lg-6">
                         <div class="text-center p-5" style="background: rgba(51, 33, 29, .8);">
                             <h1 class="text-white mb-4 mt-5">Reservas anticipadas</h1>
-                            <form class="mb-5">
+                            <form class="mb-5" method="POST" action="">
+                            <!-- <form method="POST" action="controllers/reservaController.php"> -->
                                 <div class="form-group">
-                                    <input type="text" class="form-control bg-transparent border-primary p-4" placeholder="Nombre"
-                                        required="required" />
+                                <input type="text" name="nombre" class="form-control bg-transparent border-primary p-4" placeholder="Nombre" 
+                                required />
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control bg-transparent border-primary p-4" placeholder="Email"
-                                        required="required" />
+                                <input type="email" name="correo" class="form-control bg-transparent border-primary p-4" placeholder="Email" 
+                                required />
                                 </div>
                                 <div class="form-group">
                                     <div class="date" id="date" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Fecha" data-target="#date" data-toggle="datetimepicker"/>
+                                    <input type="text" name="fecha" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Fecha" data-target="#date" data-toggle="datetimepicker" required />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="time" id="time" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Hora" data-target="#time" data-toggle="datetimepicker"/>
+                                    <input type="text" name="hora" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Hora" data-target="#time" data-toggle="datetimepicker" required />
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <select class="custom-select bg-transparent border-primary px-4" style="height: 49px;">
-                                        <option selected> Café frío con Pachit + taza  </option>
-                                        <option value="1">Pack para dos + tarjeta</option>
-                                        <option value="2">  Café + marcapáginas literario </option>
-                                        <option value="3"> Combo invernal + Playlist + receta </option>
-                                        <option value="3"> Pack regalo edición limitada </option>
+                                <select name="id_producto" class="custom-select bg-transparent border-primary px-4" style="height: 49px;" required>
+                                        <option value="">Selecciona un producto</option>
+                                        <?php while($row = mysqli_fetch_assoc($resultado)) { ?>
+                                            <option value="<?php echo $row['id']; ?>">
+                                                <?php echo htmlspecialchars($row['nombre']); ?>
+                                            </option>
+                                        <?php } ?>
                                     </select>
-                                </div>
-                                
+                                </div>   
                                 <div>
                                     <button class="btn btn-primary btn-block font-weight-bold py-3" type="submit">Reservas Ahora</button>
                                 </div>
@@ -398,6 +403,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
 </body>
 
 </html>

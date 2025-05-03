@@ -34,10 +34,14 @@
                 <p>hoja de novedades </p>
                 <div class="w-100">
                 <div class="input-group">
-                    <input type="email" id="newsletterEmail" class="form-control border-light" style="padding: 25px;" placeholder="Tu Email">
-                    <div class="input-group-append">
-                        <button id="newsletterBtn" class="btn btn-primary font-weight-bold px-3">Registrate</button>
+                <form action="controllers/registroCliController.php" method="POST">
+                    <div class="input-group">
+                        <input type="email" name="newsletterEmail" class="form-control border-light" style="padding: 25px;" placeholder="Tu Email" required>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary font-weight-bold px-3">Registrate</button>
+                        </div>
                     </div>
+                </form>
                 </div>
                 </div>
             </div>
@@ -52,7 +56,5 @@
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     
-    <script src="mail/registerUser.js"></script>
-
     
     <!-- Footer End -->
