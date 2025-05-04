@@ -160,23 +160,24 @@ include 'body/header.php';
     <!-- Service End -->
 
 
-    <!-- Offer Start -->
-    <div class="offer container-fluid my-5 py-5 text-center position-relative overlay-top overlay-bottom">
-        <div class="container py-5">
-            <h1 class="display-3 text-primary mt-3">50% De Descuento</h1>
-            <h1 class="text-white mb-3">Oferta Especial Los Domingos</h1>
-            <h4 class="text-white font-weight-normal mb-4 pb-3">Solo para el domingo del 1 al 31 de Abril 2025</h4>
-            <form class="form-inline justify-content-center mb-4">
-                <div class="input-group">
-                    <input type="text" class="form-control p-4" placeholder="Tu Email" style="height: 60px;">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary font-weight-bold px-4" type="submit">Registrate</button>
-                    </div>
+<!-- Offer Start -->
+<div class="offer container-fluid my-5 py-5 text-center position-relative overlay-top overlay-bottom">
+    <div class="container py-5">
+        <h1 class="display-3 text-primary mt-3">50% De Descuento</h1>
+        <h1 class="text-white mb-3">Oferta Especial Los Domingos</h1>
+        <h4 class="text-white font-weight-normal mb-4 pb-3">Solo para el domingo del 1 al 31 de Abril 2025</h4>
+        <form class="form-inline justify-content-center mb-4"  action="controllers/registroCliController.php" method="POST">
+            <div class="input-group">
+                <input type="email" name="newsletterEmail" class="form-control p-4" placeholder="Tu Email" style="height: 60px;" required>
+                <div class="input-group-append">
+                    <button class="btn btn-primary font-weight-bold px-4" type="submit">Registrate</button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
-    <!-- Offer End -->
+</div>
+<!-- Offer End -->
+
 
 
     <!-- Menu Start -->
@@ -293,12 +294,12 @@ include 'body/header.php';
                                 </div>
                                 <div class="form-group">
                                     <div class="date" id="date" data-target-input="nearest">
-                                    <input type="text" name="fecha" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Fecha" data-target="#date" data-toggle="datetimepicker" required />
+                                    <input type="text" name="fecha" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Para Fecha" data-target="#date" data-toggle="datetimepicker" required />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="time" id="time" data-target-input="nearest">
-                                    <input type="text" name="hora" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Hora" data-target="#time" data-toggle="datetimepicker" required />
+                                    <input type="text" name="hora" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Para Hora" data-target="#time" data-toggle="datetimepicker" required />
                                     </div>
                                 </div>
                                 <div class="form-group">

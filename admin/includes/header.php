@@ -65,9 +65,19 @@ if (empty($_SESSION['id'])) {
                     <span>Productos</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="registraUsuario.php">
+                <a class="nav-link" href="clientes.php">
                     <i class="fas fa-user"></i>
-                    <span>Registro usuario</span></a>
+                    <span>Clientes</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reserva.php">
+                    <i class="fas fa-bookmark"></i>
+                    <span>Reservas</span></a>   
+            </li>    
+            <li class="nav-item">
+                <a class="nav-link" href="mensajes_contacto.php">
+                    <i class="fas fa-address-book"></i>
+                    <span> Contactos</span></a>   
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="listaUsuario.php">
@@ -75,19 +85,14 @@ if (empty($_SESSION['id'])) {
                     <span>Mis usuarios</span></a>   
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="registraUsuario.php">
+                    <i class="fas fa-user"></i>
+                    <span>Registro usuario</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reportes.php">
                     <i class="fas fa-chart-line"></i>
                     <span>Reportes</span></a>   
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-address-book"></i>
-                    <span> Contactos</span></a>   
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-bookmark"></i>
-                    <span>Reservas</span></a>   
             </li>
 
             <!-- Divider -->
