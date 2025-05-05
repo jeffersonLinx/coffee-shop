@@ -30,7 +30,7 @@ if (empty($_SESSION['id'])) {
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->   
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.php">
@@ -90,10 +90,21 @@ if (empty($_SESSION['id'])) {
                     <span>Registro usuario</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="reportes.php">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Reportes</span></a>   
-            </li>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReportes" aria-expanded="false" aria-controls="collapseReportes">
+            <i class="fas fa-chart-pie"></i>
+        <span>Reportes</span>
+    </a>
+    <div id="collapseReportes" class="collapse" aria-labelledby="headingReportes" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Tipos de Reporte:</h6>
+            <a class="collapse-item" href="reportes.php">Reservas</a>
+            <a class="collapse-item" href="reportesProductos.php">Reportes Productos</a>
+            <a class="collapse-item" href="reporteClientes.php">Reportes Clientes</a>
+            <a class="collapse-item" href="reporte4.php">Reporte 4</a>
+        </div>
+    </div>
+</li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -147,7 +158,7 @@ if (empty($_SESSION['id'])) {
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                                     <!-- ?php echo $_SESSION['nombre']; ?></span> -->
-                                <img class="img-profile rounded-circle" src="/assets/profe.jpg">
+                                <img class="img-profile rounded-circle" src="/assets/profe.jpg" alt="Image">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -176,6 +187,13 @@ if (empty($_SESSION['id'])) {
 
 <!-- Inicio para el header  -->
 <!-- Bootstrap core JavaScript-->
+<!-- jQuery -->
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+<!-- Popper.js (para Bootstrap 4) -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script> -->
+<!-- Bootstrap 4 JS -->
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

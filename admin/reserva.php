@@ -150,7 +150,7 @@ $result = mysqli_query($conn, $query);
     </div>
 </div>
 
-<?php include("includes/footer.php"); ?>
+
 
 <!-- Modal Editar Cliente -->
 <div id="modalEditarCliente" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="editClienteModal" aria-hidden="true">
