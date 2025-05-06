@@ -218,8 +218,8 @@ function exportarExcel() {
     const uri = 'data:application/vnd.ms-excel;charset=UTF-8;base64,';
     const template = `<?xml version="1.0" encoding="UTF-8"?>
         <html xmlns:o="urn:schemas-microsoft-com:office:office" 
-              xmlns:x="urn:schemas-microsoft-com:office:excel" 
-              xmlns="http://www.w3.org/TR/REC-html40">
+            xmlns:x="urn:schemas-microsoft-com:office:excel" 
+            xmlns="http://www.w3.org/TR/REC-html40">
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <!--[if gte mso 9]>

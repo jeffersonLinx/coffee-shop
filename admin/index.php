@@ -23,6 +23,8 @@ if (!empty($_SESSION['error_login'])) {
     <!-- Agregar los estilos de SB Admin y Bootstrap -->
     <link rel="stylesheet" type="text/css" href="../assets/css/sb-admin-2.min.css">
     <link rel="shortcut icon" href="../assets/img/favicon.ico" />
+        <!-- Agregar el script de reCAPTCHA -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body class="bg-gradient-warning">
@@ -59,17 +61,23 @@ if (!empty($_SESSION['error_login'])) {
 
                                     <!-- Formulario de inicio de sesión -->
                                     <form class="user" method="POST" action="../controllers/login.php" autocomplete="off">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Usuario..." required>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="clave" name="clave" placeholder="Contraseña" required>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            Iniciar sesión
-                                        </button>
-                                        <hr>
-                                    </form>
+        <div class="form-group">
+            <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Usuario..." required>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control form-control-user" id="clave" name="clave" placeholder="Contraseña" required>
+        </div>
+        
+        <!-- Agregar el widget de reCAPTCHA -->
+        <div class="form-group d-flex justify-content-center">
+            <div class="g-recaptcha" data-sitekey="6LdKFQUqAAAAAGeTPqnaH4lluclcjikR7PEuIzHx"></div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-user btn-block">
+            Iniciar sesión
+        </button>
+        <hr>
+    </form>
                                 </div>
                             </div>
                         </div>

@@ -97,10 +97,12 @@ if (empty($_SESSION['id'])) {
     <div id="collapseReportes" class="collapse" aria-labelledby="headingReportes" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Tipos de Reporte:</h6>
-            <a class="collapse-item" href="reportes.php">Reservas</a>
-            <a class="collapse-item" href="reportesProductos.php">Reportes Productos</a>
+            <a class="collapse-item" href="reportes.php">Reporte Reservas</a>
+            <a class="collapse-item" href="reportesProductos.php">Reporte Productos</a>
             <a class="collapse-item" href="reporteClientes.php">Reportes Clientes</a>
-            <a class="collapse-item" href="reporte4.php">Reporte 4</a>
+            <a class="collapse-item" href="reporteContacto.php">Reporte Contacto</a>
+            <a class="collapse-item" href="reporteProductoPorCategoria.php">Reporte Categoria</a>
+            <a class="collapse-item" href="reporteUsuarioSistema.php">Reporte trabajadores</a>
         </div>
     </div>
 </li>
@@ -153,27 +155,27 @@ if (empty($_SESSION['id'])) {
                                 </form>
                             </div>
                         </li>
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                    <!-- ?php echo $_SESSION['nombre']; ?></span> -->
-                                <img class="img-profile rounded-circle" src="/assets/profe.jpg" alt="Image">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#"> 
-                                <!-- aqui poner algo arriva en href -->
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Perfil
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="..\config\salir.php">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Salir
-                                </a>
-                            </div>
-                        </li>
+    <!-- Nav Item - User Information -->
+    <li class="nav-item dropdown no-arrow">
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                <?php echo isset($_SESSION['usuario']) ? $_SESSION['usuario'] : 'Usuario'; ?>
+            </span>
+            <img class="img-profile rounded-circle" src="../assets/profe.jpg" alt="Imagen de perfil">
+        </a>
+        <!-- Dropdown - User Information -->
+        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="#">
+                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                Perfil
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../config/salir.php">
+                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                Salir
+            </a>
+        </div>
+    </li>
 
                     </ul>
 
