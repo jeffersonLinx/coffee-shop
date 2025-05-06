@@ -47,7 +47,7 @@ if (!empty($_POST)) {
         if (password_verify($pass_input, $dato['Clave'])) {
             $_SESSION['active'] = true;
             $_SESSION['id'] = $dato['id'];
-            $_SESSION['nombre'] = $dato['nombre'];
+            $_SESSION['usuario'] = $dato['usuario'];
             $_SESSION['user'] = $dato['usuario'];
             $_SESSION['rol'] = $dato['rol'];
 

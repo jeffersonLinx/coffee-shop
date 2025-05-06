@@ -58,38 +58,33 @@ if (!empty($_SESSION['error_login'])) {
                                             </div>
                                         <?php endif; ?>
                                     </div>
-
                                     <!-- Formulario de inicio de sesión -->
                                     <form class="user" method="POST" action="../controllers/login.php" autocomplete="off">
-        <div class="form-group">
-            <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Usuario..." required>
-        </div>
-        <div class="form-group">
-            <input type="password" class="form-control form-control-user" id="clave" name="clave" placeholder="Contraseña" required>
-        </div>
-        
-        <!-- Agregar el widget de reCAPTCHA -->
-        <div class="form-group d-flex justify-content-center">
-            <div class="g-recaptcha" data-sitekey="6LdKFQUqAAAAAGeTPqnaH4lluclcjikR7PEuIzHx"></div>
-        </div>
-        
-        <button type="submit" class="btn btn-primary btn-user btn-block">
-            Iniciar sesión
-        </button>
-        <hr>
-    </form>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user" id="usuario" name="usuario" placeholder="Usuario..." required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" id="clave" name="clave" placeholder="Contraseña" required>
+                                        </div>
+                                        
+                                        <!-- Agregar el widget de reCAPTCHA -->
+                                        <div class="form-group d-flex justify-content-center">
+                                            <div class="g-recaptcha" data-sitekey="6LdKFQUqAAAAAGeTPqnaH4lluclcjikR7PEuIzHx"></div>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                            Iniciar sesión
+                                        </button>
+                                        <hr>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
